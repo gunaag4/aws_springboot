@@ -2,16 +2,22 @@ package com.asg.weather.demo.models;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotNull;
+
 public class WeatherDto implements Serializable
 {
 	private static final long serialVersionUID = 7805780501508456473L;
 	
+	@NotNull(message = "date is required field")
 	private String date;
 	private String city;
 	private String state;
+	@NotNull(message = "latitude is required field")
 	private Double latitude;
+	@NotNull(message = "longitude is required field")
 	private Double longitude;
 	private Double temperature;
+	
 	public String getDate() {
 		return date;
 	}
